@@ -207,5 +207,16 @@
     </div>
 {% endif %}
     <hr class="section-seperator">
+    <div>
+        <h5>Interests</h5>
+        <div class="section">
+            <ul class="interest-details">
+                {% for interest in data.interests %}
+                <li> {{ interest|e }} </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <hr class="section-seperator">
+    </div>
 </body>
 </html>
