@@ -1,0 +1,85 @@
+
+---
+personal:
+    name:                First M. Last 
+    address_line_1:      123 Fourth Street
+    address_line_2:      Springfield, UV 12345
+    phone:               (555) 555-5555
+    email:               first.last@example.org
+    public_email:        first.last@example.org
+
+objective: >
+    A position in the field of excellence with special
+    interests in efficacy, efficiency, and synergy.
+
+education:
+    degree:              Bachelor of Science
+    field:               Quantum Engineering
+    institution:         Atomic University
+    location:            Area 57, NM
+    graduation_year:     2525
+
+skills:
+    - computer skills
+        - Apache
+        - ANTLR
+        - C++
+        - CSS 
+        - HTML
+        - HTML 5
+        - Java
+        - JavaScript
+        - jQuery
+        - MS SQL Server
+        - MySQL
+        - OpenLDAP
+        - Perl
+        - PHP5
+        - Python
+        - Shell Scripting
+        - SQLite
+        - TCL/Tk
+        - WordPress
+        - XML
+        - XSLT
+    - platforms
+        - Android
+        - Google App Engine
+        - Linux
+        - Windows (2000, XP, 2K3, Windows 7)
+
+experience:
+    - month:           January
+      year:            2520 to Present
+      organization:    Temporal Specialists, Inc.
+      location:        010 Infinity Place
+      position:        Quantum Technician
+      details:
+        - Perfomed routine maintenance on chrono-particle generators.
+        - Administered particle accelerator routing jobs.
+        - Administered source code repositories.
+        - Administered temporal communications network.
+        - Performed routine maitenance on telepads.
+    -  year:           1720 to 1775
+      organization:    Quantum Agents
+      location:        Singularity Way, Phoenix Cluster
+      position:        Temporal Agent
+      details:
+        - Inserted into pre-SolGov history on Terra.
+        - Laid groundwork for Earth "American Revolution".
+        - Instructed native pivitol agent Benjamin Franklin.
+references:
+    - name:             X398-ZZ-Q'ann
+      phone:            555-555-5555
+
+    - name:             John Smith
+      phone:            555-555-5555
+
+    - name:             Edwin Uncle
+      phone:            555-555-5555
+
+interests:
+    - Miniature black hole sculpting and classification
+    - Riddles and lateral thinking puzzles
+    - Amateur astronomy
+
