@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+    <title>Resume - {{ name|e }}</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" >
+    <style type="text/css">
+        body {
+            background-color: white;
+            font: 0.9em Verdana, sans-serif;
+        }
+        
+        h1, h2, h3, h4, h5, h6, .skills{
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        
+        h1 {
+            font: 1.5em arial, sans-serif;
+            text-align: center;
+        }
+        #id_contact_list {
+            text-align: center;
+            font: 0.9em Verdana, sans-serif;
+        }
+        h3 {
+            font: 1.3em arial, sans-serif;
+            font-weight: bold;
+            width: 20%;
+            float: left;
+            clear: left;
+        }
+
+        h4 {
+            font: 1.3em arial, sans-serif;
+            font-weight: bold;
+            width: 20%;
+            float: left;
+            clear: left;
+        }
+
+        h5 {
+            font: 1.2em arial, sans-serif;
+            font-weight: bold;
+            width: 20%;
+            float: left;
+            clear: left;
+        }
+
+        .section {
+            float: right;
+            clear: right;
+            width: 70%;
+            margin-right: 10%;
+        }
+
+        .section-seperator {
+            float: left;
+            width: 100%;
+            visibility: hidden;
+        }
+
+        .position-heading {
+            font-weight: bold;
+        }
+
+        .skills {
+            list-style-type: none;
+            padding-left: 0;
+            margin-left: 0;
+        }
+
+        h6 {
+            font: 0.7em arial, sans-serif;
+            display: inline;
+            font-style: italic;
+        }
+
+        h6 + div {
+            display: inline;
+        }
+
+        .position-details {
+            margin-left: 0;
+            padding-left: 0;
+            list-style-position: inside;
+        }
+
+        .reference-details, .interest-details {
+            margin-top: 0;
+            padding-top: 0;
+            margin-bottom: 0;
+            padding-bottom: 0;
+            margin-left: 0;
+            padding-left: 0;
+        }
+        
+        p {
+            margin-top: 0;
+            margin-bottom: 1em;
+            margin-left: 0;
+            margin-right: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ data.personal.name|e }}</h1>
+    <hr>
+
+{% if public_flag %}
+    <div id="id_contact_list">
+        {{ data.personal.address_line_1|e }}
+        <br>
+        {{ data.personal.address_line_2|e }}
+        <br>
+        {{ data.personal.phone|e }}
+        <br>
+        {{ data.personal.email|e }}
+    </div>
+{% else %}
+    <div id="id_contact_list">
+        {{ data.personal.phone|e }}
+        <br>
+        {{ data.personal.public_email|e }}
+    </div>
+{% endif %}
+    <p>
+    <div>
+        <h3>Objective</h3>
+        <div class="section">
+            {{ data.objective|e }}
+        </div>
+        <hr class="section-seperator">
+    </div>
+    <div>
+        <h3>Education</h3>
+        {% for institution in data.education %}
+        <div class="section">
+            {{ institution.degree|e }}, {{ institution.field|e }}
+            <br>
+            {{ institution.institution|e }}, {{ institution.location|e }}, {{ institution.graduation_year|e }}
+        </div>
+        {% endfor %}
+        <hr class="section-seperator">
+    </div>
+    <div>
+        <h3>Skills</h3>
+        <div class="section">
+            <ul class="skills">
+            {% for skillset in data.skills %}
+                <li>
+                    <h6>{{ skillset.category|e }}</h6>
+                    <div>
+                        {{ skillset.skills|join(', ')|e }}
+                    </div>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+        <hr class="section-seperator">
+    </div>
+
+    <div>
+        <h4>Experience</h4>
+        {% for experience in data.experience %}
+        <div class="section">
+            <div class="position-heading">
+                <span>{{ experience.position|e }}</span>
+                <span class="month-year">{{ experience.month|e }} {{ experience.year|e }}</span>
+                <br>
+                {{ experience.organization|e }}
+                <br>
+                {{ experience.location|e }}
+                <br>
+            </div>
+            <ul class="position-details">
+                {% for detail in experience.details %}
+                <li>{{ detail|e }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+        <hr class="section-seperator">
+    </div>
+{% if public_flag %}
+    <div>
+        <h5>References</h5>
+        <div class="section">
+            <ul class="reference-details">
+                {% for reference in data.references %}
+                <li>
+                {{ reference.name|e }}
+                <br/>
+                {{ reference.phone|e }}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% else %}
+    <div>
+        <h5>References</h5>
+        <p class="section">
+        Available upon request.
+        </p>
+    </div>
+{% endif %}
+    <hr class="section-seperator">
+</body>
+</html>

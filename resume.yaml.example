@@ -13,14 +13,15 @@ objective: >
     interests in efficacy, efficiency, and synergy.
 
 education:
-    degree:              Bachelor of Science
-    field:               Quantum Engineering
-    institution:         Atomic University
-    location:            Area 57, NM
-    graduation_year:     2525
+    - degree:              Bachelor of Science
+      field:               Quantum Engineering
+      institution:         Atomic University
+      location:            Area 57, NM
+      graduation_year:     2525
 
 skills:
-    - computer skills
+    - category: computer skills
+      skills:
         - Apache
         - ANTLR
         - C++
@@ -42,7 +43,8 @@ skills:
         - WordPress
         - XML
         - XSLT
-    - platforms
+    - category: platforms
+      skills:
         - Android
         - Google App Engine
         - Linux
