@@ -12,7 +12,7 @@ import yaml
 
 def main(file_name, outfile_name, **options):
     with open(file_name, "r") as f:
-        data = yaml.load(f)
+        data = yaml.load(f, Loader=yaml.SafeLoader)
     junk, ext = os.path.splitext(outfile_name)
     if ext == '.tex':
         write_latex(data, outfile_name)
@@ -72,7 +72,7 @@ if __name__ == "__main__":
                     'help',
                     'version',
                     'public',])
-    except getopt.GetoptError, e:
+    except getopt.GetoptError as e:
         print >> sys.stderr, e.msg
         usage(sys.argv[0])
         sys.exit(STATUS_ERROR)
